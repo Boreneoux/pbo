@@ -1,0 +1,14 @@
+1. inisial project
+git init
+2. add keseluruhan project
+git add .
+3. commit perubahan
+git commit -m "tes"
+4. set branch dengan nama main
+git branch -M main
+5. bikin reponya
+curl -u 'usergithubmu' https://api.github.com/user/repos -d '{"name":"namareponya","private":false}'
+6. biasanya urlsshgithub seperti ini -> git@github.com:Boreneoux/pbo.git
+git remote add origin git@github.com:Boreneoux/pbo.git
+7. push ke github
+git push -u origin main
