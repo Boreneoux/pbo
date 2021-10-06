@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
 {
-    cout<<"waddup"<<endl;
+    cout<<"hellow world"<<endl;
     cin.get();
     return 0;
 }
