@@ -13,7 +13,10 @@ public:
         jumlahAir = 0;
         jumlahPupuk = 0;
     }
-
+    void setTumbuh()
+    {
+        statusTumbuh++;
+    }
     void beriAir()
     {
         jumlahAir++;
@@ -25,7 +28,6 @@ public:
         jumlahPupuk++;
         cekKondisiTumbuh();
     }
-
     virtual void cekKondisiTumbuh()
     {
         // cek kecukupan air dan pupuk
@@ -45,9 +47,14 @@ public:
         }
     }
 
+    int getStatusTumbuh()
+    {
+        return statusTumbuh;
+    }
+
     void displayPlant()
     {
-        cout << getStatusTumbuhText() << endl;
+        cout << "Status Tumbuh : " << getStatusTumbuhText() << endl;
         cout << "Jumlah Air: " << jumlahAir << endl;
         cout << "Jumlah Pupuk: " << jumlahPupuk << endl;
     }
@@ -78,11 +85,6 @@ public:
         }
     }
 
-    int getStatusTumbuh()
-    {
-        return statusTumbuh;
-    }
-
     string getImagePath()
     {
         string tImagePath = "img/seed.png";
@@ -107,29 +109,5 @@ public:
         }
 
         return tImagePath;
-    }
-};
-
-class Anggrek : public Plant
-{
-    Anggrek() : Plant() {}
-
-    void cekKondisiTumbuh()
-    {
-        // cek kecukupan air dan pupuk
-        if (jumlahAir >= 5 && jumlahPupuk >= 2)
-        {
-            tumbuh();
-        }
-    }
-
-    void tumbuh()
-    {
-        if (statusTumbuh < 4)
-        {
-            jumlahAir = jumlahAir - 5;
-            jumlahPupuk = jumlahPupuk - 2;
-            statusTumbuh++;
-        }
     }
 };
